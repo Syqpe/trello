@@ -17,7 +17,9 @@
         "jsx": "react-jsx",
         "paths": {
             "@components/*": ["./src/shared/components/index.tsx"],
+            "@widgets/*": ["./src/widgets/index.ts"],
             "@API/*": ["./src/app/api/index.ts"],
+            "@app/*": ["./src/app/*"],
             "@pages/*": ["./src/pages/index.tsx"],
             "@utils/*": ["./src/shared/utils/index.ts"],
             "@localtypes/*": ["./src/shared/types/index.ts"],

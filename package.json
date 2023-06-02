@@ -1,6 +1,6 @@
 {
-    "name": "amazing-breeds",
-    "description": "app with breeds images",
+    "name": "trello",
+    "description": "app like trello",
     "version": "1.0.0",
     "type": "module",
     "author": {
@@ -16,12 +16,14 @@
         "@ant-design/icons": "^4.8.0",
         "@bem-react/classname": "^1.5.12",
         "@fingerprintjs/fingerprintjs": "^3.3.6",
+        "@reduxjs/toolkit": "^1.9.5",
         "antd": "^5.0.3",
         "axios": "^1.2.0",
         "clientjs": "^0.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-query": "^3.39.2",
+        "react-redux": "^8.0.7",
         "react-router-dom": "^6.4.4"
     },
     "devDependencies": {

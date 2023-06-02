@@ -37,5 +37,17 @@ module.exports = {
         "jsx-a11y/img-redundant-alt": 0,
         "@typescript-eslint/no-floating-promises": 0,
         "no-nested-ternary": 0,
+
+        "import/no-named-as-default": 0,
+        "@typescript-eslint/no-unsafe-return": 1,
+        "@typescript-eslint/no-unsafe-call": 1,
+        "@typescript-eslint/no-unsafe-assignment": 1,
+        "@typescript-eslint/no-unsafe-member-access": 1,
+        "no-param-reassign": 1,
+        "@typescript-eslint/no-unsafe-argument": 1,
+
+        "react/function-component-definition": 0,
+        "@typescript-eslint/restrict-template-expressions": 1,
+        "react/require-default-props": 1,
     },
 };

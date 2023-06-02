@@ -1,15 +1,17 @@
 import { Routing } from "@pages/";
-import { QueryClientProvider } from "@API/";
+import { DefaultLayout, MainLayout } from "./layouts";
 
 import "./index.scss";
 
 function App() {
     return (
-        <QueryClientProvider>
-            <div className="App">
-                <Routing />
-            </div>
-        </QueryClientProvider>
+        <DefaultLayout>
+            <MainLayout>
+                <div className="App">
+                    <Routing />
+                </div>
+            </MainLayout>
+        </DefaultLayout>
     );
 }
 
