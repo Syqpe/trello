@@ -32,14 +32,14 @@ export const api = createApi({
         },
     }),
     endpoints: builder => ({
-        login: builder.mutation<LoginResponse, SignRequest>({
+        signIn: builder.mutation<LoginResponse, SignRequest>({
             query: credentials => ({
                 url: "login",
                 method: "POST",
                 body: credentials,
             }),
         }),
-        reqister: builder.mutation<RegisterResponse, SignRequest>({
+        signUp: builder.mutation<RegisterResponse, SignRequest>({
             query: credentials => ({
                 url: "register",
                 method: "POST",
@@ -52,4 +52,4 @@ export const api = createApi({
     }),
 });
 
-export const { useLoginMutation, useReqisterMutation, useGetUserQuery } = api;
+export const { useSignInMutation, useSignUpMutation, useGetUserQuery } = api;

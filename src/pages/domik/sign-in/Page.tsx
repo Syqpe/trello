@@ -7,14 +7,14 @@ import "./Page.scss";
 
 const { Title } = Typography;
 
-const b = cn("home");
+const b = cn("signin");
 
-const Home: FC = function () {
+const SignIn: FC = function () {
     return (
         <div className={b()}>
             <div className={b("inner")}>
                 <div className={b("title")}>
-                    <Title level={1}>Amazing breeds :)</Title>
+                    <Title level={1}>Sign-in</Title>
                 </div>
                 <div className={b("content")}>Content</div>
             </div>
@@ -39,4 +39,4 @@ const Home: FC = function () {
     // );
 };
 
-export { Home };
+export { SignIn };

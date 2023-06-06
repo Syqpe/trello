@@ -7,6 +7,9 @@ import { selectUser } from "@app/store/reducers/userSlice";
 import { useAppSelector } from "../shared/hooks";
 import { Error } from "./error";
 
+const SignIn = lazy(() => import("./domik/sign-in"));
+const SignUp = lazy(() => import("./domik/sign-up"));
+
 const Home = lazy(() => import("./home"));
 const Whois = lazy(() => import("./whois"));
 
@@ -19,18 +22,25 @@ const AuthGuard: FC<{ children: ReactElement }> = ({ children }) => {
         return children;
     }
 
-    return <Navigate to="/login" />;
+    return <Navigate to="/sign-in" />;
 };
 
 const router = createBrowserRouter([
     {
-        path: "/login",
+        path: "/sig-in",
         element: (
-            <AuthGuard>
-                <Suspense>
-                    <Home />
-                </Suspense>
-            </AuthGuard>
+            <Suspense>
+                <SignIn />
+            </Suspense>
+        ),
+        errorElement: <Error />,
+    },
+    {
+        path: "/sig-up",
+        element: (
+            <Suspense>
+                <SignUp />
+            </Suspense>
         ),
         errorElement: <Error />,
     },
