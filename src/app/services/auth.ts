@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { AppState } from "@app/store";
-import { IUser } from "@localtypes/";
+import { IUser } from "@localtypes";
 
 export interface LoginResponse {
     token: string;

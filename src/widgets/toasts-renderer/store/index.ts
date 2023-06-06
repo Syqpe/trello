@@ -1,7 +1,7 @@
-import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { AppState } from '@client/app/store';
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { AppState } from "@app/store";
 
-import { getHashString } from '@cshared/utils/getHashString';
+import { getHashString } from "@utils";
 
 interface MessageCallback {
     id: string;
@@ -9,14 +9,14 @@ interface MessageCallback {
 }
 
 export enum MessageType {
-    'DEFAULT' = 'DEFAULT',
-    'SUCCESS' = 'SUCCESS',
-    'ERROR' = 'ERROR',
+    "DEFAULT" = "DEFAULT",
+    "SUCCESS" = "SUCCESS",
+    "ERROR" = "ERROR",
 }
 
 export enum MessagePositions {
-    'LEFT-TOP' = 'LEFT-TOP',
-    'RIGHT-TOP' = 'RIGHT-TOP',
+    "LEFT-TOP" = "LEFT-TOP",
+    "RIGHT-TOP" = "RIGHT-TOP",
 }
 
 export interface MessageOptions {
@@ -52,7 +52,7 @@ const initialState: InitialState = {
 };
 
 export const toastssSlice = createSlice({
-    name: 'toasts',
+    name: "toasts",
     initialState,
     reducers: {
         setLoading: (state, action: PayloadAction<boolean>) => {

@@ -16,14 +16,16 @@
         "noEmit": true,
         "jsx": "react-jsx",
         "paths": {
-            "@components/*": ["./src/shared/components/index.tsx"],
-            "@widgets/*": ["./src/widgets/index.ts"],
+            "@components": ["./src/shared/components/index.tsx"],
+            "@utils": ["./src/shared/utils/index.ts"],
+            "@hooks": ["./src/shared/hooks/index.tsx"],
+            "@localtypes": ["./src/shared/types/index.ts"],
+
             "@API/*": ["./src/app/api/index.ts"],
-            "@app/*": ["./src/app/*"],
-            "@pages/*": ["./src/pages/index.tsx"],
-            "@utils/*": ["./src/shared/utils/index.ts"],
-            "@localtypes/*": ["./src/shared/types/index.ts"],
-            "@hooks/*": ["./src/shared/hooks/index.tsx"]
+
+            "@widgets/*": ["./src/widgets/*"],
+            "@reducers/*": ["./src/app/store/reducers/*"],
+            "@app/*": ["./src/app/*"]
         }
     },
     "include": ["src"],

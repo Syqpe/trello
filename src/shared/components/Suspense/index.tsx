@@ -1,5 +1,5 @@
 import { Suspense as ReactSuspense, FC, ReactNode } from "react";
-import { cn } from "@utils/";
+import { cn } from "@utils";
 
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";

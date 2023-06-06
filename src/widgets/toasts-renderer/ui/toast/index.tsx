@@ -1,12 +1,14 @@
-import React, { useCallback, FC } from 'react';
-import { useAppDispatch } from '@client/shared/hooks/store-hooks';
-import { useTimeout } from '@cshared/hooks/use-timeout';
-import { Icon, Text } from '@ccomponents/index';
-import { close, MessageType, ToastProp } from '../../store';
+import React, { useCallback, FC } from "react";
+import { useAppDispatch, useTimeout } from "@hooks";
+import { Typography } from "antd";
+import { ExclamationCircleOutlined, CheckOutlined } from "@ant-design/icons";
+import { close, MessageType, ToastProp } from "../../store";
 
-import { DefaultParamsProp } from '..';
+import { DefaultParamsProp } from "../../types";
 
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
+
+const { Text } = Typography;
 
 interface Props {
     defaultParams: DefaultParamsProp;
@@ -32,12 +34,10 @@ const Toast: FC<Props> = ({ defaultParams, item }) => {
                 return (
                     <div className={styles.toast__content}>
                         <div className={styles.toast__icon}>
-                            <Icon glyph={'type-tick'} size="l" />
+                            <CheckOutlined />
                         </div>
                         <div className={styles.toast__message}>
-                            <Text typography="control-m" weight="regular" color={'success'}>
-                                {message}
-                            </Text>
+                            <Text type="success">{message}</Text>
                         </div>
                     </div>
                 );
@@ -45,12 +45,10 @@ const Toast: FC<Props> = ({ defaultParams, item }) => {
                 return (
                     <div className={styles.toast__content}>
                         <div className={styles.toast__icon}>
-                            <Icon glyph={'x-sign'} size="l" />
+                            <ExclamationCircleOutlined />
                         </div>
                         <div className={styles.toast__message}>
-                            <Text typography="control-m" weight="regular" color={'alert'}>
-                                {message}
-                            </Text>
+                            <Text type="danger">{message}</Text>
                         </div>
                     </div>
                 );

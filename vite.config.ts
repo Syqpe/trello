@@ -8,15 +8,15 @@ export default defineConfig({
     resolve: {
         alias: {
             "@components": `${path.resolve(__dirname, "./src/shared/components/index.tsx")}`,
-            "@widgets/*": `${path.resolve(__dirname, "./src/widgets/index.ts")}`,
+            "@hooks": `${path.resolve(__dirname, "./src/shared/hooks/index.ts")}`,
+            "@utils": `${path.resolve(__dirname, "./src/shared/utils/index.ts")}`,
+            "@localtypes": `${path.resolve(__dirname, "./src/shared/types/index.tsx")}`,
 
             "@API": `${path.resolve(__dirname, "./src/app/api/index.ts")}`,
-            "@app/*": `${path.resolve(__dirname, "./src/app/")}`,
-            "@pages": `${path.resolve(__dirname, "./src/pages/index.tsx")}`,
-            "@utils": `${path.resolve(__dirname, "./src/shared/utils/index.ts")}`,
-            "@types": `${path.resolve(__dirname, "./src/shared/types/index.ts")}`,
-            "@localtypes": `${path.resolve(__dirname, "./src/shared/types/index.tsx")}`,
-            "@hooks": `${path.resolve(__dirname, "./src/shared/hooks/index.tsx")}`,
+
+            "@widgets": `${path.resolve(__dirname, "./src/widgets/")}`,
+            "@reducers": `${path.resolve(__dirname, "./src/app/store/reducers/")}`,
+            "@app": `${path.resolve(__dirname, "./src/app/")}`,
         },
     },
 });

@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { Typography } from "antd";
 import FingerprintJS, { GetResult } from "@fingerprintjs/fingerprintjs";
 
-import { cn } from "@utils/";
+import { cn } from "@utils";
 
 import "./Page.scss";
 

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Typography } from "antd";
 
-import { cn } from "@utils/";
+import { cn } from "@utils";
 
 import "./Page.scss";
 

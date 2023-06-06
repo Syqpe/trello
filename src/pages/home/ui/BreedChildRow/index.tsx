@@ -2,8 +2,8 @@ import { useState, FC } from "react";
 import { useQueryClient, useQuery } from "react-query";
 import { Button, Spin, Typography } from "antd";
 
-import { cn } from "@utils/";
-import { ResponseInterface } from "@localtypes/*";
+import { cn } from "@utils";
+import { ResponseInterface } from "@localtypes*";
 import { IAPIError } from "@API/*";
 
 import "./index.scss";

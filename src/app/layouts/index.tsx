@@ -1,4 +1,5 @@
-import { DefaultLayout } from "./DefaultLayout";
+import { StoresLayout } from "./StoresLayout";
 import { MainLayout } from "./MainLayout";
+import { DomikLayout } from "./DomikLayout";
 
-export { DefaultLayout, MainLayout };
+export { StoresLayout, MainLayout, DomikLayout };

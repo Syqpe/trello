@@ -1,19 +1,24 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import type { AppState } from "@app/store";
-import { IUser } from "@localtypes/";
+import { IUser, ICredentials } from "@localtypes";
 
 interface InitialState {
     loading: boolean;
 
-    token: string | null;
+    credentials: ICredentials;
+
     user: IUser;
 }
 
 const initialState: Partial<InitialState> = {
     loading: false,
 
-    token: null,
+    credentials: {
+        id: null,
+        token: null,
+    },
+
     user: {
         id: null,
         email: null,
@@ -30,8 +35,8 @@ export const userSlice = createSlice({
         setLoading: (state, action: PayloadAction<boolean>) => {
             state.loading = action.payload;
         },
-        setToken: (state, action: PayloadAction<string>) => {
-            state.token = action.payload;
+        setCredentials: (state, action: PayloadAction<ICredentials>) => {
+            state.credentials = action.payload;
         },
         setUser: (state, action: PayloadAction<IUser>) => {
             state.user = action.payload;
@@ -39,7 +44,7 @@ export const userSlice = createSlice({
     },
 });
 
-export const { setLoading, setToken, setUser } = userSlice.actions;
+export const { setLoading, setCredentials, setUser } = userSlice.actions;
 
 const selectUserFunc = (state: AppState): InitialState => state.user as InitialState;
 

@@ -17,6 +17,7 @@
         "@bem-react/classname": "^1.5.12",
         "@fingerprintjs/fingerprintjs": "^3.3.6",
         "@reduxjs/toolkit": "^1.9.5",
+        "@vitejs/plugin-react": "^4.0.0",
         "antd": "^5.0.3",
         "axios": "^1.2.0",
         "clientjs": "^0.2.1",
@@ -24,7 +25,8 @@
         "react-dom": "^18.2.0",
         "react-query": "^3.39.2",
         "react-redux": "^8.0.7",
-        "react-router-dom": "^6.4.4"
+        "react-router-dom": "^6.4.4",
+        "vite": "^4.3.9"
     },
     "devDependencies": {
         "@types/clientjs": "^0.2.0",
@@ -33,7 +35,6 @@
         "@types/react-dom": "^18.0.8",
         "@typescript-eslint/eslint-plugin": "^5.45.1",
         "@typescript-eslint/parser": "^5.45.1",
-        "@vitejs/plugin-react": "^2.2.0",
         "eslint": "^8.29.0",
         "eslint-config-airbnb": "^19.0.4",
         "eslint-config-airbnb-typescript": "^17.0.0",
@@ -47,8 +48,7 @@
         "lint-staged": "^13.1.0",
         "prettier": "^2.8.0",
         "sass": "^1.56.1",
-        "typescript": "^4.9.3",
-        "vite": "^3.2.3"
+        "typescript": "^4.9.3"
     },
     "husky": {
         "hooks": {

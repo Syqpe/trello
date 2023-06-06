@@ -6,4 +6,9 @@ interface IUser {
     avatar: string | null;
 }
 
-export type { IUser };
+interface ICredentials {
+    id: string | null;
+    token: string | null;
+}
+
+export type { IUser, ICredentials };

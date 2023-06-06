@@ -1,10 +1,11 @@
 import { FC, lazy, ReactElement } from "react";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 
-import { Suspense } from "@components/";
+import { Suspense } from "@components";
 
-import { selectUser } from "@app/store/reducers/userSlice";
-import { useAppSelector } from "../shared/hooks";
+import { selectUser } from "@reducers/userSlice";
+import { DomikLayout, MainLayout } from "@app/layouts";
+import { useAppSelector } from "@hooks";
 import { Error } from "./error";
 
 const SignIn = lazy(() => import("./domik/sign-in"));
@@ -27,31 +28,24 @@ const AuthGuard: FC<{ children: ReactElement }> = ({ children }) => {
 
 const router = createBrowserRouter([
     {
-        path: "/sig-in",
+        path: "/sign-in",
         element: (
-            <Suspense>
-                <SignIn />
-            </Suspense>
-        ),
-        errorElement: <Error />,
-    },
-    {
-        path: "/sig-up",
-        element: (
-            <Suspense>
-                <SignUp />
-            </Suspense>
-        ),
-        errorElement: <Error />,
-    },
-    {
-        path: "/register",
-        element: (
-            <AuthGuard>
+            <DomikLayout>
                 <Suspense>
-                    <Home />
+                    <SignIn />
                 </Suspense>
-            </AuthGuard>
+            </DomikLayout>
+        ),
+        errorElement: <Error />,
+    },
+    {
+        path: "/sign-up",
+        element: (
+            <DomikLayout>
+                <Suspense>
+                    <SignUp />
+                </Suspense>
+            </DomikLayout>
         ),
         errorElement: <Error />,
     },
@@ -59,9 +53,11 @@ const router = createBrowserRouter([
         path: "/",
         element: (
             <AuthGuard>
-                <Suspense>
-                    <Home />
-                </Suspense>
+                <MainLayout>
+                    <Suspense>
+                        <Home />
+                    </Suspense>
+                </MainLayout>
             </AuthGuard>
         ),
         errorElement: <Error />,
@@ -69,11 +65,9 @@ const router = createBrowserRouter([
     {
         path: "/whois",
         element: (
-            <AuthGuard>
-                <Suspense>
-                    <Whois />
-                </Suspense>
-            </AuthGuard>
+            <Suspense>
+                <Whois />
+            </Suspense>
         ),
         errorElement: <Error />,
     },

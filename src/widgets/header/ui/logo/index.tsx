@@ -1,16 +1,14 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
-import styles from "./index.module.scss";
-
 interface Props {
     to: string;
 }
 
 const Logo: FC<Props> = ({ to = "/" }) => {
     return (
-        <Link className={styles.Logo} to={to}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="256" viewBox="0 0 293.29 64.56">
+        <Link to={to}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" viewBox="0 0 293.29 64.56">
                 <defs>
                     <linearGradient id="A" x1="31.52" y1="64.56" x2="31.52" y2="1.51" gradientUnits="userSpaceOnUse">
                         <stop offset=".18" stopColor="#0052cc" />

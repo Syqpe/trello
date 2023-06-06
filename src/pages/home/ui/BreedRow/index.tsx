@@ -3,8 +3,8 @@ import { useQuery, useQueryClient } from "react-query";
 import { Button, Spin, Typography } from "antd";
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
 
-import { cn } from "@utils/";
-import { ResponseInterface } from "@localtypes/*";
+import { cn } from "@utils";
+import { ResponseInterface } from "@localtypes*";
 import { IAPIError } from "@API/*";
 import { BreedChildRecord, BreedChildRow } from "../BreedChildRow";
 

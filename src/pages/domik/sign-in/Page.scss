@@ -1,8 +1,13 @@
 .signin {
+    max-width: 920px;
+    width: 920px;
+    margin: 200px auto 0 auto;
+
+    display: flex;
+    justify-content: center;
+
     &__inner {
-        max-width: 920px;
-        margin: 0 auto;
-        padding: 40px 0;
+        min-width: 400px;
     }
 
     &__title {
