@@ -17,7 +17,7 @@ const Whois = lazy(() => import("./whois"));
 const AuthGuard: FC<{ children: ReactElement }> = ({ children }) => {
     const userData = useAppSelector(selectUser);
 
-    const isAuthenticated = userData.token && userData.token.length;
+    const isAuthenticated = userData.credentials.token && userData.credentials.token.length;
 
     if (isAuthenticated) {
         return children;

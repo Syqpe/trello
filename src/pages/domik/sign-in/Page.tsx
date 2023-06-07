@@ -14,7 +14,7 @@ const { Title } = Typography;
 
 const b = cn("signin");
 
-interface ISignIn {
+interface ISign {
     email: string;
     password: string;
 }
@@ -23,15 +23,16 @@ const SignIn: FC = function () {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    const [signIn, { isLoading }] = useSignInMutation();
+    const [sign, { isLoading }] = useSignInMutation();
 
-    const onFinish = async (values: ISignIn) => {
+    const onFinish = async (values: ISign) => {
         try {
-            const credentials: ICredentials = await signIn(values).unwrap();
+            const credentials: ICredentials = await sign(values).unwrap();
             dispatch(setCredentials(credentials));
 
             navigate("/");
         } catch (err) {
+            console.log("1");
             dispatch(
                 ToastStore.notify({
                     message: "Sign is failed!",
@@ -43,6 +44,10 @@ const SignIn: FC = function () {
                 }),
             );
         }
+    };
+
+    const handleSignUp = () => {
+        navigate("/sign-up");
     };
 
     return (
@@ -78,6 +83,9 @@ const SignIn: FC = function () {
                         <Form.Item>
                             <Button type="primary" htmlType="submit">
                                 Sign-in
+                            </Button>
+                            <Button type="link" htmlType="button" onClick={handleSignUp}>
+                                Sign-up
                             </Button>
                         </Form.Item>
                     </Form>

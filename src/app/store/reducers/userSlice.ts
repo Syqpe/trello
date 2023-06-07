@@ -47,7 +47,6 @@ export const userSlice = createSlice({
 export const { setLoading, setCredentials, setUser } = userSlice.actions;
 
 const selectUserFunc = (state: AppState): InitialState => state.user as InitialState;
-
 export const selectUser = createSelector(selectUserFunc, user => user);
 
 export default userSlice.reducer;
