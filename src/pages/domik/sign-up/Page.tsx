@@ -6,9 +6,9 @@ import { cn } from "@utils";
 import "./Page.scss";
 import { useSignUpMutation } from "@app/services/auth";
 import { useAppDispatch } from "@hooks";
-import { setCredentials } from "@reducers/userSlice";
 import { ToastStore } from "@widgets/index";
 import { ICredentials } from "@localtypes";
+import { CREDENTIALS_KEY } from "@constants";
 
 const { Title } = Typography;
 
@@ -28,13 +28,13 @@ const SignUp: FC = function () {
     const onFinish = async (values: ISign) => {
         try {
             const credentials: ICredentials = await sign(values).unwrap();
-            dispatch(setCredentials(credentials));
+            localStorage.setItem(CREDENTIALS_KEY, JSON.stringify(credentials));
 
             navigate("/");
         } catch (err) {
             dispatch(
                 ToastStore.notify({
-                    message: "Sign is failed!",
+                    message: "Sign-up is failed!",
                     options: {
                         type: ToastStore.MessageType.ERROR,
                         duration: 3000,
@@ -80,7 +80,7 @@ const SignUp: FC = function () {
                         </Form.Item>
 
                         <Form.Item>
-                            <Button type="primary" htmlType="submit">
+                            <Button type="primary" htmlType="submit" loading={isLoading}>
                                 Sign-up
                             </Button>
                             <Button type="link" htmlType="button" onClick={handleBack}>

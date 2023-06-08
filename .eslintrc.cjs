@@ -44,10 +44,12 @@ module.exports = {
         "@typescript-eslint/no-unsafe-assignment": 1,
         "@typescript-eslint/no-unsafe-member-access": 1,
         "no-param-reassign": 1,
-        "@typescript-eslint/no-unsafe-argument": 1,
+        "@typescript-eslint/no-unsafe-argument": 2,
+        "@typescript-eslint/no-unused-vars": 2,
 
         "react/function-component-definition": 0,
         "@typescript-eslint/restrict-template-expressions": 1,
         "react/require-default-props": 1,
+        "@typescript-eslint/no-misused-promises": 1,
     },
 };

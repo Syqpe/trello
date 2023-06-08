@@ -3,9 +3,9 @@ import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 
 import { Suspense } from "@components";
 
-import { selectUser } from "@reducers/userSlice";
 import { DomikLayout, MainLayout } from "@app/layouts";
-import { useAppSelector } from "@hooks";
+import { ICredentials } from "@localtypes";
+import { CREDENTIALS_KEY } from "@constants";
 import { Error } from "./error";
 
 const SignIn = lazy(() => import("./domik/sign-in"));
@@ -15,11 +15,8 @@ const Home = lazy(() => import("./home"));
 const Whois = lazy(() => import("./whois"));
 
 const AuthGuard: FC<{ children: ReactElement }> = ({ children }) => {
-    const userData = useAppSelector(selectUser);
-
-    const isAuthenticated = userData.credentials.token && userData.credentials.token.length;
-
-    if (isAuthenticated) {
+    const credentials: ICredentials = JSON.parse(localStorage.getItem(CREDENTIALS_KEY) || "");
+    if (credentials.token) {
         return children;
     }
 

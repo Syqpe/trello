@@ -11,6 +11,7 @@ export default defineConfig({
             "@hooks": `${path.resolve(__dirname, "./src/shared/hooks/index.ts")}`,
             "@utils": `${path.resolve(__dirname, "./src/shared/utils/index.ts")}`,
             "@localtypes": `${path.resolve(__dirname, "./src/shared/types/index.tsx")}`,
+            "@constants": `${path.resolve(__dirname, "./src/shared/constants/index.ts")}`,
 
             "@API": `${path.resolve(__dirname, "./src/app/api/index.ts")}`,
 

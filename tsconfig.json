@@ -20,6 +20,7 @@
             "@utils": ["./src/shared/utils/index.ts"],
             "@hooks": ["./src/shared/hooks/index.tsx"],
             "@localtypes": ["./src/shared/types/index.ts"],
+            "@constants": ["./src/shared/constants/index.ts"],
 
             "@API/*": ["./src/app/api/index.ts"],
 
